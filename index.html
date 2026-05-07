@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tanvi | Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#0f172a;
+      color:white;
+      line-height:1.6;
+    }
+
+    a{
+      text-decoration:none;
+      color:white;
+    }
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    /* Navbar */
+
+    nav{
+      position:fixed;
+      width:100%;
+      top:0;
+      left:0;
+      z-index:1000;
+      background:#111827;
+      padding:18px 0;
+      box-shadow:0 2px 10px rgba(0,0,0,0.4);
+    }
+
+    nav .container{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .logo{
+      font-size:28px;
+      font-weight:700;
+      color:#38bdf8;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:25px;
+    }
+
+    .nav-links a{
+      transition:0.3s;
+      font-weight:500;
+    }
+
+    .nav-links a:hover{
+      color:#38bdf8;
+    }
+
+    /* Hero Section */
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(to right,#0f172a,#1e293b);
+      padding-top:100px;
+      text-align:center;
+    }
+
+    .hero-content{
+      max-width:800px;
+    }
+
+    .hero-text h1{
+      font-size:58px;
+      margin-bottom:10px;
+    }
+
+    .hero-text h1 span{
+      color:#38bdf8;
+    }
+
+    .hero-text h3{
+      font-size:28px;
+      margin-bottom:20px;
+      color:#cbd5e1;
+    }
+
+    .hero-text p{
+      color:#d1d5db;
+      margin-bottom:30px;
+      font-size:18px;
+    }
+
+    .btn{
+      display:inline-block;
+      background:#38bdf8;
+      color:#0f172a;
+      padding:12px 28px;
+      border-radius:8px;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      transform:translateY(-3px);
+      background:#0ea5e9;
+    }
+
+    /* Sections */
+
+    section{
+      padding:90px 0;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:50px;
+    }
+
+    .section-title h2{
+      font-size:40px;
+      color:#38bdf8;
+    }
+
+    /* About */
+
+    .about-box{
+      background:#1e293b;
+      padding:35px;
+      border-radius:16px;
+      box-shadow:0 4px 20px rgba(0,0,0,0.3);
+    }
+
+    /* Skills */
+
+    .skills-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:20px;
+    }
+
+    .skill-card{
+      background:#1e293b;
+      padding:25px;
+      border-radius:14px;
+      transition:0.3s;
+    }
+
+    .skill-card:hover{
+      transform:translateY(-6px);
+    }
+
+    .skill-card h3{
+      margin-bottom:15px;
+      color:#38bdf8;
+    }
+
+    /* Projects */
+
+    .projects-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:25px;
+    }
+
+    .project-card{
+      background:#1e293b;
+      padding:25px;
+      border-radius:16px;
+      transition:0.3s;
+      border:1px solid transparent;
+    }
+
+    .project-card:hover{
+      border-color:#38bdf8;
+      transform:translateY(-5px);
+    }
+
+    .project-card h3{
+      color:#38bdf8;
+      margin-bottom:12px;
+    }
+
+    /* Experience */
+
+    .timeline{
+      display:flex;
+      flex-direction:column;
+      gap:25px;
+    }
+
+    .timeline-item{
+      background:#1e293b;
+      padding:25px;
+      border-left:5px solid #38bdf8;
+      border-radius:10px;
+    }
+
+    .timeline-item h3{
+      color:#38bdf8;
+      margin-bottom:10px;
+    }
+
+    /* Contact */
+
+    .contact-box{
+      text-align:center;
+      background:#1e293b;
+      padding:40px;
+      border-radius:16px;
+    }
+
+    .contact-box p{
+      margin:10px 0;
+    }
+
+    /* Footer */
+
+    footer{
+      text-align:center;
+      padding:25px;
+      background:#111827;
+      color:#cbd5e1;
+    }
+
+    /* Responsive */
+
+    @media(max-width:900px){
+
+      .hero-text h1{
+        font-size:42px;
+      }
+
+      .hero-text h3{
+        font-size:22px;
+      }
+
+      .nav-links{
+        display:none;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+
+  <nav>
+    <div class="container">
+
+      <div class="logo">Tanvi</div>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Hero -->
+
+  <section class="hero">
+
+    <div class="container hero-content">
+
+      <div class="hero-text">
+
+        <h1>Hi, I'm <span>Tanvi</span></h1>
+
+        <h3>BCA Student | Tech Enthusiast</h3>
+
+        <p>
+          Motivated BCA student at Guru Gobind Singh Indraprastha University
+          with skills in React, Python, SQL, PHP, HTML, CSS and JavaScript.
+          Passionate about frontend development, AI tools, software testing,
+          and travel tech solutions.
+        </p>
+
+        <a href="#contact" class="btn">Contact Me</a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- About -->
+
+  <section id="about">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>About Me</h2>
+      </div>
+
+      <div class="about-box">
+
+        <p>
+          I am currently pursuing Bachelor of Computer Applications from JIMS, VK
+          with a GPA of 8.5. I have strong interest in web development,
+          AI technologies, software testing, and technical innovation.
+          I actively participate in hackathons, Google Labs sessions,
+          innovation programs, and technical workshops.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Skills -->
+
+  <section id="skills">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Skills</h2>
+      </div>
+
+      <div class="skills-grid">
+
+        <div class="skill-card">
+          <h3>Programming</h3>
+          <p>HTML, CSS, JavaScript, React, Python, SQL, PHP, C</p>
+        </div>
+
+        <div class="skill-card">
+          <h3>Testing & Development</h3>
+          <p>SDLC, STLC Basics, Debugging, Frontend Development</p>
+        </div>
+
+        <div class="skill-card">
+          <h3>AI & Analytics</h3>
+          <p>AI Fundamentals, AI Tools, Data Analytics, SQL Analysis</p>
+        </div>
+
+        <div class="skill-card">
+          <h3>Tools</h3>
+          <p>Canva, Excel, Word, PowerPoint, Google Docs, Google Cloud Basics</p>
+        </div>
+
+        <div class="skill-card">
+          <h3>Soft Skills</h3>
+          <p>Leadership, Communication, Team Collaboration, Problem Solving</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Projects -->
+
+  <section id="projects">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Projects</h2>
+      </div>
+
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <h3>Aura AI</h3>
+          <p>
+            AI-based project designed to understand digital body language
+            and communication patterns.
+          </p>
+        </div>
+
+        <div class="project-card">
+          <h3>Movie Search App</h3>
+          <p>
+            React application integrated with Open Source API and ChatGPT
+            for movie searching.
+          </p>
+        </div>
+
+        <div class="project-card">
+          <h3>Shopping App</h3>
+          <p>
+            E-commerce application with cart management,
+            item deletion and checkout page.
+          </p>
+        </div>
+
+        <div class="project-card">
+          <h3>Access AI</h3>
+          <p>
+            Frontend prototype designed to help specially impaired people.
+          </p>
+        </div>
+
+        <div class="project-card">
+          <h3>Retail Sales Analysis</h3>
+          <p>
+            SQL-based project demonstrating data analysis and reporting techniques.
+          </p>
+        </div>
+
+        <div class="project-card">
+          <h3>Spotify SQL Analysis</h3>
+          <p>
+            SQL project analyzing tracks, albums and artist datasets from Spotify.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Experience -->
+
+  <section id="experience">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Experience</h2>
+      </div>
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <h3>Event Management Lead — GDG JIMS</h3>
+          <p>2025 – Present</p>
+          <p>
+            Managed hackathons, Google Labs sessions and coordinated technical events.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <h3>Member Of Innovation Club — IIC JIMS</h3>
+          <p>2024 – Present</p>
+          <p>
+            Participated in industrial visits and innovation programs.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <h3>Marketing & PR Member — Enigma IT Club</h3>
+          <p>2024 – 2025</p>
+          <p>
+            Worked on promotions, outreach and technical event engagement.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <h3>PR Executive — NSS Cell</h3>
+          <p>2024 – 2025</p>
+          <p>
+            Coordinated collaborations and communication for events and activities.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Contact -->
+
+  <section id="contact">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Contact</h2>
+      </div>
+
+      <div class="contact-box">
+
+        <p><strong>Email:</strong> tan5juyal@gmail.com</p>
+
+        <p><strong>Phone:</strong> 8826196947</p>
+
+        <p><strong>Location:</strong> Delhi, India</p>
+
+        <p>
+          <strong>LinkedIn:</strong>
+          <a href="https://www.linkedin.com/in/tanvi-juyal-5a2501327" target="_blank">
+            Visit Profile
+          </a>
+        </p>
+
+        <p>
+          <strong>GitHub:</strong>
+          <a href="https://github.com/tan5juyal-arch" target="_blank">
+            Visit GitHub
+          </a>
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+
+  <footer>
+    <p>© 2026 Tanvi | Portfolio Website</p>
+  </footer>
+
+</body>
+</html>
